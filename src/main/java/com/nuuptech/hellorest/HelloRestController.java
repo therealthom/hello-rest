@@ -15,7 +15,20 @@ public class HelloRestController {
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		long c = counter.incrementAndGet();
-		System.out.println(c + " - " + String.format(template, name));
+		double result = 0;
+		for (int x = 0; x < 10; x++) {
+			result = factorial(20);
+			System.out.print(x + ", ");
+		}
+		System.out.println(result);
+		//System.out.println(c + " - " + String.format(template, name));
 		return new Greeting(c, String.format(template, name));
 	}
+
+	public double factorial (double numero) {
+		if (numero==0)
+		  return 1;
+		else
+		  return numero * factorial(numero-1);
+	  }	  
 }
