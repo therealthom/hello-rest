@@ -20,7 +20,7 @@ public class HelloRestController {
 			result = factorial(20);
 			System.out.print(x + ", ");
 		}
-		System.out.println(result);
+		System.out.println("by Thom - " + result);
 		//System.out.println(c + " - fix - " + String.format(template, name));
 		return new Greeting(c, String.format(template, name));
 	}
