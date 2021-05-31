@@ -16,6 +16,7 @@ public class HelloRestController {
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		long c = counter.incrementAndGet();
 		double result = 0;
+		System.out.print("hi! -> ");
 		for (int x = 0; x < 10; x++) {
 			result = factorial(20);
 			System.out.print(x + ", ");
