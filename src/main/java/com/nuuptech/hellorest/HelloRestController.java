@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRestController {
 
-	private static final String template = "Hola, %s!";
+	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Mundo") String name) {
+	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		long c = counter.incrementAndGet();
 		double result = 0;		
 		//System.out.print("Hola");
