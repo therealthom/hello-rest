@@ -13,7 +13,7 @@ public class HelloRestController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "IFREM") String name) {
+	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Mundo") String name) {
 		long c = counter.incrementAndGet();
 		double result = 0;		
 		//System.out.print("Hola");
