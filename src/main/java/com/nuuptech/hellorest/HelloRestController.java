@@ -12,7 +12,7 @@ public class HelloRestController {
 	private static final String template = "Hola, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@GetMapping("/greeting")
+	@GetMapping("/greeting-userX")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Tom!") String name) {
 		long c = counter.incrementAndGet();
 		double result = 0;		
