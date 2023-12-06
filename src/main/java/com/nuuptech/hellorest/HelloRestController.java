@@ -31,7 +31,7 @@ public class HelloRestController {
 	}
 
 	@PostMapping("/reverse")
-	public Message reverse(@RequestBody Text text) {
+	public Message reverse(@RequestBody Message text) {
 		String reverse = new StringBuilder(text.getText()).reverse().toString();
 		return new Message(reverse);
 	}
