@@ -16,7 +16,7 @@ public class HelloRestController {
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Tom!") String name) {
-		System.out.print("GET greeting: " + name);
+		System.out.println("GET greeting: " + name);
 		
 		long c = counter.incrementAndGet();
 		double result = 0;		
@@ -32,7 +32,7 @@ public class HelloRestController {
 
 	@PostMapping("/reverse")
     	public String reverse(@RequestBody String text) {
-		System.out.print("POST reverse: " + text);
+		System.out.println("POST reverse: " + text);
         	return new StringBuilder(text).reverse().toString();
     	}
 
