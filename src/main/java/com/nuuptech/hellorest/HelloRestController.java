@@ -5,6 +5,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class HelloRestController {
@@ -14,16 +16,25 @@ public class HelloRestController {
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Mexico!") String name) {
-		long c = counter.incrementAndGet();
-		double result = 0;		
-		//System.out.print("Hola");
-		for (int x = 0; x < 10; x++) {
-			result = factorial(20);
-			System.out.print(x + ", ");
-		}
-		System.out.println(result);
+		System.out.print("GET greeting: " + name);
+		
+		// long c = counter.incrementAndGet();
+		// double result = 0;		
+		// System.out.print("Hola");
+		// for (int x = 0; x < 10; x++) {
+		//	result = factorial(20);
+		//	System.out.print(x + ", ");
+		//}		
+		//System.out.println(result);
+		
 		return new Greeting(c, String.format(template, name));
 	}
+
+	@PostMapping("/reverse")
+    	public String reverse(@RequestBody String text) {
+		System.out.print("POST reverse: " + text);
+        	return new StringBuilder(text).reverse().toString();
+    	}
 
 	public double factorial (double numero) {
 		if (numero==0)
