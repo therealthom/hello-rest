@@ -15,17 +15,17 @@ public class HelloRestController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Mexico!") String name) {
+	public Greeting greeting(@RequestParam(value = "name", defaultValue = "Tom!") String name) {
 		System.out.print("GET greeting: " + name);
 		
-		// long c = counter.incrementAndGet();
-		// double result = 0;		
-		// System.out.print("Hola");
-		// for (int x = 0; x < 10; x++) {
-		//	result = factorial(20);
-		//	System.out.print(x + ", ");
-		//}		
-		//System.out.println(result);
+		long c = counter.incrementAndGet();
+		double result = 0;		
+		System.out.print("Hola");
+		for (int x = 0; x < 10; x++) {
+			result = factorial(20);
+			System.out.print(x + ", ");
+		}		
+		System.out.println(result);
 		
 		return new Greeting(c, String.format(template, name));
 	}
