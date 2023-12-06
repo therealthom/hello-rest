@@ -1,3 +1,5 @@
+package com.nuuptech.hellorest;
+
 public class Message {
     private String text;
 
