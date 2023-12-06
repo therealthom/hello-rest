@@ -31,10 +31,10 @@ public class HelloRestController {
 	}
 
 	@PostMapping("/reverse")
-    	public String reverse(@RequestBody String text) {
-		System.out.println("POST reverse: " + text);
-        	return new StringBuilder(text).reverse().toString();
-    	}
+	public Texto reverse(@RequestBody Text text) {
+		String reverse = new StringBuilder(text.getText()).reverse().toString();
+		return new Message(reverse);
+	}
 
 	public double factorial (double numero) {
 		if (numero==0)
